@@ -31,5 +31,4 @@ In order to setup the local development environment please run the following com
 
 ### Challenges
 
-- Currently we are unable to use direct imports, because the build system does not properly handle them in the bundle. This is
-  possible however, but would requirea a better build setup.
+- Currently we are unable to use direct imports, because the build system does not properly handle them in the bundle. This is possible however, but would require a better build setup.
