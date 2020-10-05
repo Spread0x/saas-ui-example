@@ -1,11 +1,13 @@
-import React, { FC, useMemo, ReactNode } from 'react';
+import React, { FC, useMemo, ReactNode, InputHTMLAttributes } from 'react';
 import { Field, FieldInputProps, FieldMetaState, UseFieldConfig } from 'react-final-form';
 import { useTheme } from '@grafana/ui';
 import { cx } from 'emotion';
 import { getStyles } from './Checkbox.styles';
 import { Validator, compose } from '../../shared/validators';
 
-export interface CheckboxProps extends UseFieldConfig<boolean> {
+type InputHTMLAttrs<T> = Omit<InputHTMLAttributes<T>, 'defaultValue' | 'value' | 'onChange'>;
+
+export interface CheckboxProps extends UseFieldConfig<boolean>, InputHTMLAttrs<boolean> {
   disabled?: boolean;
   fieldClassName?: string;
   label?: string | ReactNode;
