@@ -11,8 +11,9 @@ describe('Validator minLength::', () => {
   it('Should return an error if the string length is less than required', () => {
     const length = 8;
     const validator = minLength(length);
-
-    expect(validator('1234567')).toEqual(`Must contain at least ${length} characters`);
-    expect(validator('0')).toEqual(`Must contain at least ${length} characters`);
+    const errorMessage = `Must contain at least ${length} characters`;
+    expect(validator('1234567')).toEqual(errorMessage);
+    expect(validator('0')).toEqual(errorMessage);
+    expect(validator(null)).toEqual(errorMessage);
   });
 });
